@@ -1,0 +1,29 @@
+{% extends 'ref.html' %}
+{% load static %}
+
+    {% block content %}
+        <section class="section_form">
+            <div class="container_login__page">
+                <form action="/inscription/login/" method="post" class="form_group">
+                    {% csrf_token %}
+                        {% if messages %}
+                            {% for msg in messages %}
+                                <p class="text__error"> {{ msg }} </p>
+                            {% endfor %}
+                        {% endif %}
+                    <div class="form__element">
+                        <div><label for="name" class="form__element_label">login</label></div>
+                        <input type="text" name="nom" class="form__element_input">
+                    </div>
+                    <div class="form__element">
+                        <div><label for="password" class="form__element_label">password</label></div>
+                        <input type="password" name="password"   class="form__element_input">
+                    </div>
+                    <div class="form__element">
+                        <input type="submit" class="btn_connexion">
+                    </div>
+                </form>
+            </div>
+        </section>
+    {% endblock %}
+accueil utilisateur

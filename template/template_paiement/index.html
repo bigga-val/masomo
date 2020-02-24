@@ -1,0 +1,113 @@
+{% extends 'ref.html' %}
+{% load static %}
+
+{% block header %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+    {% block content %}
+        <section class="main_section">
+            <div class="main__section__content">
+                <div class="form_content">
+                    <form action="#" class="">
+                         <div class="form_second_row_child">
+                             <div class="label__form__element">
+                                <label for="Section">Section:</label></div>
+                                <div class="form__group">
+                                    <select name="section" id="select_section" class="form__group__element__select">
+                                            {% for section in section %}
+                                        <option value="{{ section.id }}">{{ section.designation_section }}</option>
+                                            {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="label__form__element"><label for="option">Option:</label></div>
+                                <div class="form__group">
+                                    <select name="option" id="select_option" class="form__group__element__select">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="label__form__element">
+                                <label for="classe">Classe:</label></div>
+                                <div class="form__group" >
+                                    <select name="classe" id="select_classe" class="form__group__element__select">
+
+                                        <option value=""></option>
+
+                                    </select>
+                                </div>
+                                <div class="label__form__element"><label for="frais">Frais:</label></div>
+                                <div class="form__group">
+                                    <select name="frais" id="select_frais" class="form__group__element__select">
+
+                                        <option value=""></option>
+
+                                    </select>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    {% endblock %}
+
+
+{% block footer %}
+    {% include 'footer.html' %}
+    <script type="text/javascript">
+        $(document.load).ready(function(){
+            var sect = $("#select_section");
+            var opt = $("#select_option");
+            var cla = $("#select_classe");
+            sect.change(function(){
+                alert(sect.html());
+                $.ajax( '/paiement/tri_option',{
+                    type:'GET',
+                    data: {'section': sect.val()},
+                    dataType:'JSon',
+                    success: function(data){
+                        if(data.etat === 'success'){
+                            opt.html("<option value="+data.option.id+">"+data.option.designation_option+"</option>")
+                        }else{
+                           console.log(data.message);
+                           opt.html("")
+                        }
+                    },
+                    error: function(data){
+                        console.log("popopopopo erreurr");
+                        console.log(data);
+                    }
+                });
+
+
+
+            });
+
+opt.change(function(){
+                alert(opt.html());
+                $.ajax( '/paiement/tri_classe',{
+                    type:'GET',
+                    data: {'option': opt.val()},
+                    dataType:'JSon',
+                    success: function(data){
+                        if(data.etat === 'success'){
+                            console.log(data.classe);
+                            console.log(data.classe.id);
+                            console.log(data.classe.designation_classe);
+                            cla.html("<option value="+data.classe.id+">"+data.classe.designation_option+"</option>")
+                        }else{
+                           console.log(data.message);
+                           opt.html("")
+                        }
+                    },
+                    error: function(data){
+                        console.log("popopopopo erreurr classe");
+                        console.log(data);
+                    }
+                });
+            });
+
+
+        });
+
+    </script>
+{% endblock %}

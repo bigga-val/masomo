@@ -1,0 +1,233 @@
+.home_menu_nav {
+  display: flex;
+  justify-content: center;
+  list-style-type: None;
+  color: blue;
+  background-color: #C0C0C0;
+  height: 10vh; }
+
+.home__menu__list {
+  margin: 20px;
+  font-size: 25px;
+  weight: 500px;
+  color: #236B8E; }
+
+.home__menu__link {
+  text-decoration: None;
+  color: #236B8E; }
+
+.home__content__element {
+  display: inline-block;
+  justify-content: center;
+  color: #ffffff;
+  margin: 10%;
+  weight: 300px;
+  font-size: 50px; }
+
+.btn__connexion__home {
+  background-color: #236B8E;
+  border-radius: 10px; }
+
+.link__connexion__home {
+  color: #ffffff;
+  text-decoration: None; }
+
+.title_home {
+  text-transform: uppercase; }
+
+.home_content {
+  text-align: center;
+  background: linear-gradient(to right top, rgba(155, 0, 50, 0.5), rgba(0, 20, 5, 0.5)), url("img/homeback.PNG") top;
+  height: 80vh;
+  vertical-align: middle; }
+
+.footer_home {
+  height: 10vh;
+  background-color: #C0C0C0; }
+
+.text_copyright {
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding-top: 20px; }
+
+.section_menu {
+  height: 80vh;
+  text-align: center;
+  background: linear-gradient(to right top, rgba(155, 0, 50, 0.5), rgba(0, 20, 5, 0.5)), url("img/homeback.PNG") top; }
+
+.menu__list {
+  list-style-type: None;
+  color: white;
+  padding-top: 10%; }
+
+.menu__list__link {
+  font-size: 50px;
+  color: white;
+  text-decoration: None; }
+
+.section_form {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+  width: 100vw;
+  margin-top: 20vh;
+  margin-bottom: 20vh; }
+
+.form__element_input {
+  height: 50px;
+  width: 250px;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 30px; }
+
+.form__element_label {
+  font-size: 20px; }
+
+.container_login__page {
+  height: 50vh;
+  width: 100vh;
+  background-color: #E6E8FA;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 5px 5px 3px 0px; }
+
+.btn_connexion {
+  height: 30px;
+  width: 150px;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  border: 0 solid blue;
+  margin: 10px; }
+
+.text__error {
+  color: red;
+  text-transform: uppercase; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.navigation_bar {
+  background-color: #3299CC;
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  padding-right: 30px;
+  padding-left: 30px; }
+
+.navbar_user_content {
+  display: inline;
+  margin-top: 10px; }
+
+.user__info__text {
+  font-size: 30px;
+  weight: 10;
+  margin: 20px; }
+
+logo_masomo {
+  margin: 20px; }
+
+.form_content {
+  height: 80vh;
+  width: 70%;
+  margin: 0 auto;
+  text-align: space-around; }
+
+.form_row {
+  display: flex;
+  justify-content: center; }
+
+.row {
+  padding: 10px; }
+
+.form__group__element {
+  width: 300px;
+  margin: 5px;
+  padding: 15px;
+  height: 25px;
+  border-radius: 10px;
+  box-shadow: 3px 5px 0.1 gray; }
+
+.form__group__element__select {
+  width: 300px;
+  margin: 5px;
+  padding-left: 5px;
+  height: 30px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 0 gray; }
+
+.form_second_row_action {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px; }
+
+.btn__success {
+  width: 150px; }
+
+.btn__reset {
+  width: 150px;
+  background-color: red; }
+
+.buttons {
+  height: 25px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0.1 blue;
+  font-size: 20px; }
+
+.label__form__element {
+  position: relative;
+  float: left; }
+
+.liste_eleve {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center; }
+
+.liste_title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 3em; }
+
+.liste {
+  background-color: yellow;
+  text-align: center; }
+
+table {
+  border: solid black;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%; }
+
+td {
+  border-bottom: solid green; }
+
+body, html {
+  margin: 0;
+  padding: 0; }
+
+* {
+  box-sizing: border-box; }
+
+.modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); }
+
+.modal-wrapper {
+  overflow: auto;
+  width: 600px;
+  max-width: calc(100vw - 20px);
+  max-height: calc(100vh - 20px);
+  padding: 20px;
+  background-color: #fff; }

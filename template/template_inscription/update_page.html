@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="/inscription/update/{{eleve.id}}" method="post">
+            {%csrf_token%}
+            <input type="text" value="{{eleve.nom_eleve}}" name="nom_eleve">
+            <input type="text" value="{{eleve.postnom_eleve}}" name="postnom_eleve">
+            <input type="text" value="{{eleve.prenom_eleve}}" name="prenom_eleve">
+            <input type="text" value="{{eleve.sexe_eleve}}" name="sexe_eleve">
+            <input type="text" value="{{eleve.nom_tuteur}}" name="nom_tuteur">
+            <input type="text" value="{{eleve.telephone_tuteur}}" name="telephone_tuteur">
+
+            <input type="submit" value="Valider">
+        </form>
+    </body>
+</html>

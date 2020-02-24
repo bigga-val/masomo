@@ -1,0 +1,42 @@
+{% extends 'ref.html' %}
+{% load static %}
+
+
+{% block header %}
+    <ul class="home_menu_nav">
+        <li class="home__menu__list"><a href="" class="home__menu__link">about</a></li>
+        <li class="home__menu__list"><a href="" class="home__menu__link">contact</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="home_content">
+        <div class="home__content__element">
+            <div class="title_home">
+                <p>insoft masomo</p>
+            </div>
+            <div class="btn__connexion__home">
+                <a href="inscription/login_page/" class="link__connexion__home">connexion</a>
+            </div>
+        </div>
+    </div>
+    <!--a href="#modal1">affiche modal</a>
+    <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="title_form" style="display:None">
+        <h3 id="title_form">Formulaire de connexion</h3>
+        <div class="modal-wrapper">
+            <form action="" method="post">
+                <div class="username">
+                    <input type="text" name="username" class="form_home" placeholder="username">
+                </div>
+                <div class="password">
+                    <input type="password" name="password" class="form_home" placeholder="password">
+                </div>
+                <input type="submit" name="submit_login" class="btn_connexion" value="Se connecter">
+            </form>
+        </div>
+    </aside-->
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}

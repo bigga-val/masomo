@@ -1,0 +1,103 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="../../static/jquery.min.js"></script>
+    <!--script>
+        $(document).ready(function(){
+            $('select#selectcountries').change(function(){
+                var optionSelected = $(this).find("option:selected");
+                var valueSelected = optionSelected.val();
+                var country_name = optionSelected.text();
+
+                data = {'cnt': country_name};
+                $.ajax('/utilisateur/getdetails', data, function(result){
+                    console.log(result);
+                    $("#selectcities option").remove();
+                    for(var i = result.length - 1; i >= 0; i--){
+                        $("#selectcities").append('<option>'+result[i].name+'</option>');
+                    };
+                 });
+            });
+        });
+    </script-->
+</head>
+<body>
+    <select name="selectcountries" id="selectcountries">
+        {% for item in countries %}
+        <option val="{{ item.name }}">{{item.name}}</option>
+        {% endfor %}
+    </select>
+
+    <select name="selectcities" id="selectcities">
+        <option value=""></option>
+    </select>
+    <input type="button" class="btn" value="bouton">
+    <button class="but">appuie</button>
+    <div id="division">
+        <p class="paragraphe">paragraphe</p>
+        <ul class="liste">
+            <li class="element_liste">element premier</li>
+            <li class="element_liste">element deuxieme</li>
+            <li class="element_liste">element troisieme</li>
+        </ul>
+        <h3>h3</h3>
+        <h4>h4</h4>
+
+    </div>
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+    <div id="div3">div3</div>
+    <button id="bout">jdfhakd</button>
+
+    <div id="div4">div4</div>
+    <div id="div5">div5</div>
+    <div id="div6">div6</div>
+    <button id="bouton">animate</button>
+
+    <script>
+        $(function(){
+            $("select[name=selectcountries]").hide();
+            $(".btn").mouseup(function(){
+                $("select[name=selectcountries]").show();
+                $(this).css("background-color", "yellow");
+                $("div").css("background-color", "red")
+            });
+            $("button.but").on({
+                mouseleave: function(){
+                    $(this).css("background-color", "green");
+                },
+                click: function(){
+                    $(this).css("background-color", "blue");
+                        $(this).html("afficher");
+                    $("ul.liste").toggle();
+                },
+            });
+            $("#bout").click(function(){
+                $("#div3").slideToggle();
+                $(this).css("background-color", "yellow");
+            });
+            $("button#bouton").click(function(){
+                $("ul").nextUntil("h4").css({'border': '5px solid blue'});
+                $("#div4")
+                .html("je change", function(){
+                    console.log("html:" +$("#div4").text())
+                    })
+                });
+            var long = $(document).height();
+            var largeur = $(document).width();
+            var inlong = $(document).innerHeight();
+            var inlargeur = $(document).innerWidth();
+            var outlong = $(document).outerHeight();
+            var outlargeur = $(document).outerWidth();
+            alert(long+ ' '+largeur+', '+inlong+' '+inlargeur+', '+outlong+' '+outlargeur);
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<nav class="navigation_bar">
+    <div class="img_logo">
+        <img src="" alt="logo_masomo">
+    </div>
+    <div class="navbar_user_content">
+        <a class="user__info__text">Hello, {{ request.session.nom }}</a>
+        <a href="/inscription/logout" class="user__info__text">logout</a>
+        <a href="/inscription/liste/" class="user__info__text">liste</a>
+        <a href="/paiement" class="user__info__text">paiement</a>
+        <a href="/paiement/liste/" class="user__info__text">paie liste</a>
+    </div>
+</nav>

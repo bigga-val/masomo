@@ -1,0 +1,26 @@
+{% extends 'ref.html' %}
+{% load static %}
+
+{% block header %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+{% block content %}
+    <section class="section_menu">
+        <div class="section__menu__content">
+                <ul class="menu__list">
+                    <li class="menu__list__element"><a href="/inscription" class="menu__list__link">inscrire</a></li>
+                    <li class="menu__list__element"><a href="/paiement" class="menu__list__link">Effectuer paiement</a></li>
+                    <li class="menu__list__element"><a href="" class="menu__list__link">Plus {{ user.get_nom_ops }} </a></li>
+                    {% if request.session.name %}
+                    <li class="menu__list__element">{{ request.session.name }}</li>
+                    {% endif %}
+                </ul>
+
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}

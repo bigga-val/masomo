@@ -1,0 +1,53 @@
+{% extends 'template_inscription/ref_inscription.html' %}
+{% load static %}
+
+     {% block header %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+
+    {% block content %}
+        <section class="">
+            <div class="liste_eleve">
+                <div class="liste_title">Les eleves en ordre</div>
+
+            {% if paiement %}
+
+                <table>
+                    <tr class="liste">
+                        <td>#</td>
+
+                        <td>Nom</td>
+
+                        <td>Postnom</td>
+
+                        <td>Prenom</td>
+
+                        <td>Tuteur</td>
+
+                        <td>Actions</td>
+                    </tr>
+
+                    {% for eleve in paiement %}
+                    <tr>
+                        <td>{{ eleve.id }}</td>
+                        <td>{{ eleve.eleve.nom_eleve }}</td>
+                        <td>{{ eleve.eleve.postnom_eleve }}</td>
+                        <td>{{ eleve.eleve.prenom_eleve }}</td>
+                        <td>{{ eleve.classe.designation_classe }} {{ eleve.classe.option.designation_option }}</td>
+                        <td><a href="/inscription/update_eleve/{{ eleve.id }}">Edit</a>
+                            <a href="/inscription/delete/{{ eleve.id }}">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+            <p class="text__error">Aucun eleve inscrit jusque maintenant</p>
+            {% endif %}
+            </div>
+        </section>
+    {% endblock %}
+
+{% block footer %}
+        {% include 'footer.html' %}
+    {% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'template_inscription/ref_inscription.html' %}
+{% load static %}
+    {% block header %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+    {% block content %}
+        <div class="form_content">
+            <form action="/inscription/inscrire" method="post" class="">
+                {% csrf_token %}
+                <div class="form_row">
+                    <fieldset>
+                        <legend>Eleve a inscrire</legend>
+                        <div class="form_first_row row">
+                            <div class="form__group"><input type="text" name="nom_eleve" class="form__group__element" placeholder="Nom"></div>
+                            <div class="form__group"><input type="text" name="postnom_eleve" class="form__group__element" placeholder="Postnom"></div>
+                            <div class="form__group"><input type="text" name="prenom_eleve" class="form__group__element" placeholder="Prenom"></div>
+                            <select name="sexe_eleve" class="form__group__element__select">
+                                        <option value="M" selected>Homme</option>
+                                        <option value="F">Femme</option>
+                            </select>
+                            <!--div class="form__group"><input type="text" name="lieu_naiss" class="form__group__element" placeholder="Lieu de naissance"></div>
+                            <div class="form__group"><input type="date" name="date_naiss" class="form__group__element" placeholder="Date de naissance"></div-->
+                            <div class="form__group"><input type="text" name="nom_tuteur" class="form__group__element" placeholder="Nom tuteur"></div>
+                            <div class="form__group"><input type="text" name="tel_tuteur" class="form__group__element" placeholder="Telephone"></div>
+                            <div class="form__group"><input type="hidden" name="ops" value="{{ request.session.id }}" class="form__group__element" placeholder=""></div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                            <legend>Paiement</legend>
+                        <div class="form_second_row row">
+
+                            <div class="form_second_row_child">
+                                <div class="label__form__element">
+                                <label for="Section">Section:</label></div>
+                                <div class="form__group">
+                                    <select name="section" id="section" class="form__group__element__select">
+                                            {% for section in sections %}
+                                        <option value="{{ section.id }}">{{ section.designation_section }}</option>
+                                            {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="label__form__element"><label for="option">Option:</label></div>
+                                <div class="form__group">
+                                    <select name="option" id="option" class="form__group__element__select">
+                                            {% for option in options %}
+                                        <option value="{{ option.id }}">{{ option.designation_option }}</option>
+                                            {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="label__form__element">
+                                <label for="classe">Classe:</label></div>
+                                <div class="form__group" >
+
+                                    <select name="classe" id="classe" class="form__group__element__select">
+                                        {% for classe in classes %}
+                                        <option value="{{ classe.id }}">{{ classe.designation_classe }}</option>
+                                            {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="label__form__element"><label for="frais">Frais:</label></div>
+                                <div class="form__group">
+
+                                    <select name="frais" id="frais" class="form__group__element__select">
+                                        {% for frais in frais %}
+                                        <option value="{{ frais.id }}">{{ frais.designation_frais }}</option>
+                                            {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                        <div class="form_second_row_action">
+                            <div class="input__action__form"><input type="submit" value="inscrire" class="btn__success buttons"></div>
+                            <div class="input__action__form"><input type="reset" value="Annuler" class="btn__reset buttons"></div>
+                        </div>
+                    </div>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+<script type="text/javascript" src="../../static/jquery.min.js></script>
+    {% endblock %}
+
+    {% block footer %}
+        {% include 'footer.html' %}
+    {% endblock %}
+

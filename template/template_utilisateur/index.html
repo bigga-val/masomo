@@ -1,0 +1,22 @@
+{% extends 'ref.html' %}
+{% load static %}
+
+    {% block content %}
+        <section class="section_form">
+            <form action="/inscription/connexion/" method="post" class="form_group">
+                {% csrf_token %}
+                <div class="form__element">
+                    <label for="name"></label>
+                    <input type="text" name="nom" class="form__element_input">
+                </div>
+                <div class="form__element">
+                    <label for="password"></label>
+                    <input type="password" name="password" class="form__element_input">
+                </div>
+                <div class="form__element">
+                    <input type="submit" class="btn_connexion">
+                </div>
+            </form>
+        </section>
+    {% endblock %}
+accueil utilisateur

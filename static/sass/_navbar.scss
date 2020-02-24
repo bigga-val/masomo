@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.navigation_bar{
+    background-color: #3299CC;
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.navbar_user_content{
+    display: inline;
+    margin-top: 10px;
+
+}
+.user__info__text{
+    font-size: 30px;
+    weight: 10;
+    margin: 20px;
+}
+logo_masomo{
+    margin: 20px;
+}

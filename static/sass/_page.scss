@@ -1,0 +1,112 @@
+.home_menu_nav{
+    display: flex;
+    justify-content: center;
+    list-style-type: None;
+    color: blue;
+    background-color: #C0C0C0;
+    height: 10vh;
+}
+.home__menu__list{
+    margin: 20px;
+    font-size:25px;
+    weight: 500px;
+    color: #236B8E
+}
+.home__menu__link{
+    text-decoration: None;
+    color: #236B8E;
+}
+.home__content__element{
+    display: inline-block;
+    justify-content: center;
+    color: #ffffff;
+    margin: 10%;
+    weight: 300px;
+    font-size: 50px;
+}
+.btn__connexion__home{
+    background-color: #236B8E;
+    border-radius: 10px;
+}
+.link__connexion__home{
+    color: #ffffff;
+    text-decoration: None;
+}
+.title_home{
+    text-transform: uppercase;
+}
+.home_content{
+    //background-color: #BC8F8F;
+    text-align: center;
+    background : linear-gradient(to right top, rgba(155, 0, 50, 0.5), rgba(0, 20, 5, 0.5)), url("img/homeback.PNG") top;
+    height: 80vh;
+    vertical-align: middle;
+}
+.footer_home{
+    height: 10vh;
+    background-color: #C0C0C0;
+}
+.text_copyright{
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding-top: 20px;
+}
+.section_menu{
+    height: 80vh;
+    text-align: center;
+    background : linear-gradient(to right top, rgba(155, 0, 50, 0.5), rgba(0, 20, 5, 0.5)), url("img/homeback.PNG") top;
+}
+.menu__list{
+    list-style-type: None;
+    color: white;
+    padding-top: 10%;
+}
+.menu__list__link{
+    font-size: 50px;
+    color: white;
+    text-decoration: None;
+}
+//login_pagin style
+.section_form{
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    width: 100vw;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+}
+.form__element_input{
+    height: 50px;
+    width: 250px;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
+.form__element_label{
+    font-size: 20px;
+}
+.container_login__page{
+    height: 50vh;
+    width: 100vh;
+    background-color:#E6E8FA;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0.4) 5px 5px 3px 0px;
+}
+
+.btn_connexion{
+    height: 30px;
+    width: 150px;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    border: 0 solid blue;
+    margin: 10px;
+}
+.text__error{
+    color: red;
+    text-transform: uppercase;
+}

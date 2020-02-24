@@ -1,0 +1,58 @@
+{% extends 'template_inscription/ref_inscription.html' %}
+{% load static %}
+
+     {% block header %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+
+    {% block content %}
+        <section class="">
+            <div class="liste_elve">
+                <div class="liste_title">Les eleves inscrits</div>
+            {% if eleves %}
+
+                <table>
+                    <tr class="liste">
+                        <td>#</td>
+
+                        <td>Nom</td>
+
+                        <td>Postnom</td>
+
+                        <td>Prenom</td>
+
+                        <td>Sexe</td>
+
+                        <td>Tuteur</td>
+
+                        <td>Telephone</td>
+                        <td>Actions</td>
+                    </tr>
+
+                    {% for eleve in eleves %}
+                    <tr>
+                        <td>{{ eleve.id }}</td>
+                        <td>{{ eleve.nom_eleve }}</td>
+                        <td>{{ eleve.postnom_eleve }}</td>
+                        <td>{{ eleve.prenom_eleve }}</td>
+                        <td>{{ eleve.sexe_eleve }}</td>
+                        <td>{{ eleve.nom_tuteur }}</td>
+                        <td>{{ eleve.telephone_tuteur }}</td>
+                        <td><a href="/inscription/update_eleve/{{ eleve.id }}">Edit</a>
+                            <a href="/inscription/delete/{{ eleve.id }}">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% else %}
+            <p class="text__error">Aucun eleve inscrit jusque maintenant</p>
+            {% endif %}
+
+        </section>
+    {% endblock %}
+
+{% block footer %}
+        {% include 'footer.html' %}
+    {% endblock %}
